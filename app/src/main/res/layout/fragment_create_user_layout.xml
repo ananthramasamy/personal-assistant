@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:floatview="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/md_white_1000">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:orientation="vertical">
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/register_email_wrapper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            floatview:hintTextAppearance="@style/TextAppearance.AppCompat.Small">
+
+            <EditText
+                android:id="@+id/register_email_et"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:fontFamily="sans-serif-condensed"
+                android:hint="@string/hint_email_et"
+                android:inputType="textEmailAddress"
+                android:lineSpacingExtra="5dp"
+                android:singleLine="true"
+                android:textColor="@color/md_black_1000"
+                android:textSize="@dimen/value_txt_size"
+                android:textStyle="normal" />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/register_password_wrapper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            floatview:hintTextAppearance="@style/TextAppearance.AppCompat.Small">
+
+            <EditText
+                android:id="@+id/register_password_et"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:fontFamily="sans-serif-condensed"
+                android:hint="@string/hint_password_et"
+                android:inputType="textPassword"
+                android:lineSpacingExtra="5dp"
+                android:singleLine="true"
+                android:textColor="@color/md_black_1000"
+                android:textSize="@dimen/value_txt_size"
+                android:textStyle="normal" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/register_confirm_password_wrapper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            floatview:hintTextAppearance="@style/TextAppearance.AppCompat.Small">
+
+            <EditText
+                android:id="@+id/register_confirm_password_et"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:fontFamily="sans-serif-condensed"
+                android:hint="@string/hint_confirm_password_et"
+                android:inputType="textPassword"
+                android:lineSpacingExtra="5dp"
+                android:singleLine="true"
+                android:textColor="@color/md_black_1000"
+                android:textSize="@dimen/value_txt_size"
+                android:textStyle="normal" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/register_mobile_no_wrapper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            floatview:hintTextAppearance="@style/TextAppearance.AppCompat.Small">
+
+            <EditText
+                android:id="@+id/register_mobile_no_et"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:fontFamily="sans-serif-condensed"
+                android:hint="@string/hint_mobile_et"
+                android:inputType="phone"
+                android:lineSpacingExtra="5dp"
+                android:maxLength="10"
+                android:singleLine="true"
+                android:textColor="@color/md_black_1000"
+                android:textSize="@dimen/value_txt_size"
+                android:textStyle="normal" />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <ImageButton
+            android:id="@+id/register_action_iv_btn"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:background="@drawable/ic_rounded_color_primary_shape"
+            android:clickable="true"
+            android:contentDescription="@null"
+            android:elevation="8dp"
+            android:focusable="true"
+            android:padding="12dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_arrow_forward_black_24dp"
+            android:tint="@color/md_white_1000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:fontFamily="sans-serif-condensed"
+            android:padding="8dp"
+            android:text="@string/str_or"
+            android:textSize="@dimen/header_txt_size"
+            android:textStyle="normal" />
+
+
+        <TextView
+            android:id="@+id/login_page_redirect_action_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="@string/str_login_account"
+            android:textColor="@color/md_grey_800"
+            android:textSize="@dimen/header_txt_size"
+            android:textStyle="normal" />
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="@drawable/ic_bubble_background"
+            android:contentDescription="@null" />
+
+    </LinearLayout>
+</ScrollView>
+

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:id="@+id/parent_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/md_white_1000">
+
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/walk_through_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            android:paddingTop="20dp" />
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="48dp"
+            android:background="@drawable/ic_bubble_background"
+            android:contentDescription="@null" />
+
+
+        <FrameLayout
+            android:id="@+id/buttons_layout"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+            <com.personalassistant.utils.CircleIndicatorView
+                android:id="@+id/circle_indicator_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="25dp"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                android:id="@+id/get_started_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:background="@drawable/rounded_button"
+                android:text="@string/str_get_started"
+                android:textColor="@color/md_white_1000"
+                android:textSize="16sp"
+                android:visibility="gone" />
+
+            <FrameLayout
+                android:id="@+id/navigation_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp">
+
+                <ImageView
+                    android:id="@+id/action_previous_iv"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="start"
+                    android:contentDescription="@string/content_img_action_next"
+                    android:src="@drawable/previous" />
+
+                <ImageView
+                    android:id="@+id/action_next_iv"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="end"
+                    android:contentDescription="@string/content_img_action_previous"
+                    android:src="@drawable/ic_next" />
+            </FrameLayout>
+        </FrameLayout>
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,79 @@
+<resources>
+    <string name="app_name">Personal Assistant</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string name="str_alert">Alert</string>
+    <string name="str_expense_manager_content"> Expense management service, expense managers can easily review, approve, process &amp; audit expense reports on a mobile ...</string>
+    <string name="str_manage_budgets_content"> Budgeting management  is simply balancing your expenses with your income</string>
+    <string name="str_manage_report_content"> Implementing management reports on memper spend, spending trends and comparisons to performance Goals…</string>
+    <string name="str_exit_confirmation">Do you want Exist Application</string>
+    <string name="str_loading">Loading..</string>
+    <string name="str_fetching">Fetching..</string>
+    <string name="str_close">close</string>
+    <string name="str_yes">Yes</string>
+    <string name="str_no">No</string>
+    <string name="toast_message">content_desc_toast_msg</string>
+    <string name="success_message">success</string>
+    <string name="str_get_started">Get Started</string>
+    <string name="str_no_internet_connection">No NetWork Connection.try again some time.</string>
+
+    <string name="error_required_email">Required Email</string>
+    <string name="error_required_password">Required Password</string>
+    <string name="error_mismatch_password">Mismatched Password</string>
+    <string name="error_required_confirm_email">Required Confirm Password</string>
+    <string name="error_required_mobile_email">Required Mobile </string>
+    <string name="error_invalid_mobile_no">Invalid Mobile No </string>
+    <string name="error_invalid_email">Invalid Email  </string>
+
+
+    <string name="content_img_action_next">Next</string>
+    <string name="content_img_action_previous">Previous</string>
+    <string name="content_img_walk_through_slider">slider</string>
+
+    <string name="register_fragment">Register Fragment</string>
+    <string name="hint_email_et">Email </string>
+
+    <string name="hint_password_et">Password </string>
+    <string name="hint_confirm_password_et">Confirm Password </string>
+    <string name="hint_mobile_et">Mobile No </string>
+    <string name="str_or">OR</string>
+    <string name="str_create_account">Don\'t Have an account?.Click here </string>
+    <string name="str_login_account">Already have an account?.Click here </string>
+    <string name="str_forgot_password">Forgot Password?</string>
+    <string name="str_forgot_password_tittle">Forgot Password</string>
+
+    <string name="str_income">Income </string>
+    <string name="str_expense">Expense </string>
+    <string name="str_actual_income">Actual Income </string>
+    <string name="str_goals_income">Income Goals </string>
+    <string name="str_actual_expense">Actual Expense </string>
+    <string name="str_goals_expense">Expense Goals </string>
+    <string name="str_add_expense">Add Expense</string>
+    <string name="str_last_transaction">0 Transactions more</string>
+    <string name="str_amount">\u20B9 0.00</string>
+    <string name="str_of">of \u20B9 12000</string>
+<string name="str">Month Name</string>
+    <string name="bottom_bar_tittle_home">Home</string>
+    <string name="bottom_bar_tittle_home_income">Income</string>
+    <string name="bottom_bar_tittle_expense">Expense</string>
+    <string name="bottom_bar_tittle_contacts">Contacts</string>
+
+    <string name="hint_category_name_et">Category Name </string>
+    <string name="hint_amount_et">Amount </string>
+    <string name="hint_description_et">Description </string>
+
+    <string name="categories_type_expense">Expense</string>
+    <string name="categories_type_income">Income</string>
+    <string name="over_all_income">Over All Income</string>
+    <string name="na">NA</string>
+    <string name="over_all_expense">Over All Expense</string>
+    <string name="_0_0">0.0</string>
+    <string name="str_submit_your_goal">Submit your Goal</string>
+    <string name="hint_goals_income_et">Income</string>
+    <string name="hint_goals_expense_et">Expense</string>
+    <string name="no_record_found">No record Found</string>
+    <string name="current_year_2018">2018</string>
+    <string name="no_data_available">No Data Available</string>
+</resources>

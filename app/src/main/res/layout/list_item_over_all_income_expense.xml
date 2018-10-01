@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/parent_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/activity_margin_half"
+    android:layout_marginStart="@dimen/activity_margin_half"
+    android:layout_marginTop="@dimen/activity_margin_half"
+    android:background="@color/md_white_1000">
+
+    <TextView
+        android:id="@+id/category_tv"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/ic_rounded_drawable"
+        android:contentDescription="@null"
+        android:gravity="center"
+        android:textColor="@color/md_white_1000"
+        android:textStyle="bold"
+        android:tint="@color/md_white_1000" />
+
+
+    <TextView
+        android:id="@+id/category_type_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/category_tv"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/category_tv"
+        android:textColor="#827f93"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/category_name_tittle_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/category_type_name"
+        android:layout_below="@+id/category_type_name"
+        android:text="Category Name"
+        android:textColor="#827f93" />
+
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/category_tv"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="#ebebeb" />
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/over_all_category_percentage_formatted_iv"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_below="@+id/divider"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_percentage"
+        android:tint="#827f93" />
+
+    <TextView
+        android:id="@+id/over_all_category_percentage_formatted_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/over_all_category_percentage_formatted_iv"
+        android:layout_margin="4dp"
+        android:layout_toEndOf="@+id/over_all_category_percentage_formatted_iv"
+        android:text="0.0"
+        android:textColor="#827f93"
+        android:textSize="12sp" />
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/over_all_category_amount_formatted_iv"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_below="@+id/divider"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_rupee"
+        android:tint="#827f93" />
+
+    <TextView
+        android:id="@+id/over_all_category_amount_formatted_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/over_all_category_amount_formatted_iv"
+        android:layout_margin="4dp"
+        android:layout_toEndOf="@+id/over_all_category_amount_formatted_iv"
+        android:text="0.0"
+        android:textColor="#827f93"
+        android:textSize="12sp" />
+
+    <android.support.v7.widget.AppCompatImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/divider"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_more"
+        android:tint="#827f93" />
+
+
+</RelativeLayout>

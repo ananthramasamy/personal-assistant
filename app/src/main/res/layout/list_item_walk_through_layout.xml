@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/md_white_1000">
+
+    <ImageView
+        android:id="@+id/walk_through_iv"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="54dp"
+        android:contentDescription="@string/content_img_walk_through_slider"
+        android:src="@drawable/ic_walk_through_one" />
+
+    <TextView
+        android:id="@+id/walk_through_header_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center"
+        android:padding="25dp"
+        android:textAllCaps="true"
+        android:textColor="@color/active_color"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/walk_through_footer_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/walk_through_header_tv"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="10dp"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center"
+        android:padding="25dp"
+        android:text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem velit ex minus molestias, nisi rem tenetur at reiciendis, natus aut earum ipsum molestiae repudiandae illum quasi aspernatur magnam eligendi! Earum?"
+        android:textColor="@color/md_black_1000"
+        android:textSize="17sp" />
+</RelativeLayout>

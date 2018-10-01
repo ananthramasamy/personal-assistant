@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            app:cardBackgroundColor="@color/md_white_1000"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="0dp"
+            app:contentPadding="4dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <com.personalassistant.utils.ProgressView
+                    android:id="@+id/splash_view"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center"
+                    app:circleColors="@array/splash_circle_colors"
+                    app:circleRadius="@dimen/splash_circle_radius"
+                    app:removeFromParentOnEnd="true"
+                    app:rotationDuration="@integer/splash_rotation_duration"
+                    app:rotationRadius="@dimen/splash_rotation_radius"
+                    app:splashBackgroundColor="@android:color/transparent"
+                    app:splashDuration="@integer/splash_duration" />
+
+                <TextView
+                    android:id="@+id/message_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="sans-serif-condensed"
+                    android:lineSpacingExtra="5dp"
+                    android:text="@string/str_loading"
+                    android:textColor="@color/md_black_1000"
+                    android:textSize="16sp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+
+
+        </android.support.v7.widget.CardView>
+
+    </RelativeLayout>
+</layout>

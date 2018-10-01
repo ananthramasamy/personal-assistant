@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_bottom_bar_home"
+        android:icon="@drawable/ic_menu_home_black"
+        android:title="@string/bottom_bar_tittle_home"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/action_bottom_bar_income"
+        android:icon="@drawable/ic_income"
+        android:title="@string/bottom_bar_tittle_home_income"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/action_bottom_bar_expense"
+        android:icon="@drawable/ic_expense"
+        android:title="@string/bottom_bar_tittle_expense"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/action_bottom_bar_contact"
+        android:icon="@drawable/ic_report_menu"
+        android:title="@string/bottom_bar_tittle_contacts"
+        app:showAsAction="ifRoom"/>
+</menu>
