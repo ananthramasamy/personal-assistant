@@ -1,6 +1,6 @@
 # Personal-Assistant Focus on Budget
 
-## **Personal Assistant** budget management Android application.
+
 ## **Captured images Walkthrough**:
 <img src="ScreenShot/01.jpg" width="269" height="480"/> <img src="ScreenShot/02.jpg" width="269" height="480"/> <img src="ScreenShot/03.jpg" width="269" height="480"/>
 
