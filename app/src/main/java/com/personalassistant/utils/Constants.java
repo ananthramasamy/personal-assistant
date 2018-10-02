@@ -44,19 +44,6 @@ public class Constants {
             Configuration.rgb("#F57F17")
     };
 
-
-    /*<color name="category_other_color">#BDBDBD</color>
-
-    <color name="category_income_salary_color">#FF5722</color>
-    <color name="category_income_investment_color">#607D8B</color>
-    <color name="category_income_dividends_color">#FF9800</color>
-    <color name="category_income_coupons_color">#4CAF50</color>
-    <color name="category_income_refunds_color">#009688</color>
-    <color name="category_income_rental_color">#00BCD4</color>
-    <color name="category_income_sales_color">#3F51B5</color>
-    <color name="category_income_awards_color">#E91E63</color>*/
-
-
     public static int[] INCOME_COLORS = {
             Configuration.rgb("#FF5722"),
             Configuration.rgb("#607D8B"),
@@ -70,26 +57,6 @@ public class Constants {
             Configuration.rgb("#BDBDBD"),
             Configuration.rgb("#BDBDBD"),
     };
-
-    /*<color name="category_food_color">#64DD17</color>
-    <color name="category_transport_color">#C51162</color>
-    <color name="category_shopping_color">#D50000</color>
-    <color name="category_sport_color">#AA00FF</color>
-    <color name="category_clothing_color">#6200EA</color>
-    <color name="category_billing_color">#6200EA</color>
-    <color name="category_pet_color">#304FFE</color>
-    <color name="category_electronics_color">#2962FF</color>
-    <color name="category_education_color">#0091EA</color>
-    <color name="category_health_color">#00B8D4</color>
-    <color name="category_gift_color">#00BFA5</color>
-    <color name="category_office_color">#00C853</color>
-    <color name="category_insurance_color">#64DD17</color>
-    <color name="category_bike_color">#FFD600</color>
-    <color name="category_rent_color">#AEEA00</color>
-    <color name="category_telephone_color">#FF6D00</color>
-    <color name="category_home_color">#DD2600</color>
-    <color name="category_other_color">#BDBDBD</color>*/
-
 
     public static int[] EXPENSE_CATEGORIES_COLORS = {
             Configuration.rgb("#64DD17"),

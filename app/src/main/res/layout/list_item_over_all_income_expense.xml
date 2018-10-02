@@ -39,7 +39,8 @@
         android:layout_alignStart="@+id/category_type_name"
         android:layout_below="@+id/category_type_name"
         android:text="Category Name"
-        android:textColor="#827f93" />
+        android:textColor="#827f93"
+        android:textSize="12sp" />
 
 
     <View

@@ -23,6 +23,7 @@ import com.personalassistant.MyApplication;
 import com.personalassistant.R;
 import com.personalassistant.endpoint.EndPoints;
 import com.personalassistant.endpoint.JsonRequest;
+import com.personalassistant.utils.BounceView;
 import com.personalassistant.utils.Configuration;
 import com.personalassistant.utils.Constants;
 import com.personalassistant.utils.JsonUtils;
@@ -95,9 +96,9 @@ public class ForgotUserDialog extends DialogFragment implements View.OnClickList
         ImageButton mForgotPasswordActionBTN = view.findViewById(R.id.forgot_password_action_iv_btn);
         mEmailWrapper = view.findViewById(R.id.forgot_email_wrapper);
         mEmailET = view.findViewById(R.id.forgot_email_et);
-
         mRedirectToLogin.setOnClickListener(this);
         mForgotPasswordActionBTN.setOnClickListener(this);
+        BounceView.addAnimTo(mForgotPasswordActionBTN);
     }
 
     @Override

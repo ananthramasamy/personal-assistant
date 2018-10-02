@@ -2,14 +2,12 @@ package com.personalassistant.adapter;
 
 import android.content.Context;
 import android.graphics.drawable.GradientDrawable;
-import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ProgressBar;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.personalassistant.R;
@@ -26,10 +24,13 @@ public class OverallExpenseIncomeAdapter extends RecyclerView.Adapter<OverallExp
 
     private Context mContext;
     private ArrayList<ExpenseDetailsObject> ExpenseDetailsObjectArrayList = new ArrayList<>();
+    private String mTransactionStatus;
+    private int color;
 
-    public OverallExpenseIncomeAdapter(Context mContext, ArrayList<ExpenseDetailsObject> mExpenseDetailsObjectArrayList) {
+    public OverallExpenseIncomeAdapter(String TransactionStatus, Context mContext, ArrayList<ExpenseDetailsObject> mExpenseDetailsObjectArrayList) {
         this.mContext = mContext;
         this.ExpenseDetailsObjectArrayList = mExpenseDetailsObjectArrayList;
+        this.mTransactionStatus = TransactionStatus;
     }
 
     @NonNull
@@ -49,17 +50,20 @@ public class OverallExpenseIncomeAdapter extends RecyclerView.Adapter<OverallExp
         return ExpenseDetailsObjectArrayList.size();
     }
 
-    public void onNotifyDataSetChanged(ArrayList<ExpenseDetailsObject> expenseList) {
+    public void onNotifyDataSetChanged(String TransactionStatus, ArrayList<ExpenseDetailsObject> expenseList) {
         if (expenseList != null) {
             ExpenseDetailsObjectArrayList = new ArrayList<>();
             ExpenseDetailsObjectArrayList.addAll(expenseList);
+            this.mTransactionStatus = TransactionStatus;
             notifyDataSetChanged();
         } else {
             Timber.e("Adding empty list.");
         }
     }
+
     class ViewHolder extends RecyclerView.ViewHolder {
         private TextView mCategoryNameTV, mCategoryFormattedPercentageTV, mCategoryFormattedAmount, mCategoriesViewTV;
+
         ViewHolder(View itemView) {
             super(itemView);
             mCategoryNameTV = itemView.findViewById(R.id.category_type_name);
@@ -73,7 +77,12 @@ public class OverallExpenseIncomeAdapter extends RecyclerView.Adapter<OverallExp
             holder.mCategoryFormattedPercentageTV.setText(ExpenseDetailsObjectArrayList.get(position).getmTransactionTypePercentageFormatted());
             holder.mCategoryFormattedAmount.setText(ExpenseDetailsObjectArrayList.get(position).getmTransactionTypeTotalFormatted());
             holder.mCategoriesViewTV.setText(ExpenseDetailsObjectArrayList.get(position).getmTransactionType().substring(0, 1));
-            int color = Constants.EXPENSE_CATEGORIES_COLORS[Configuration.onGetIncomeCategoriesPosition(ExpenseDetailsObjectArrayList.get(position).getmTransactionType())];
+            if (TextUtils.equals(mTransactionStatus, mContext.getString(R.string.str_income))) {
+                color = Constants.INCOME_COLORS[Configuration.onGetIncomeCategoriesPosition(ExpenseDetailsObjectArrayList.get(position).getmTransactionType())];
+            } else {
+                color = Constants.EXPENSE_CATEGORIES_COLORS[Configuration.onGetExpenseCategoriesPosition(ExpenseDetailsObjectArrayList.get(position).getmTransactionType())];
+            }
+
             ((GradientDrawable) holder.mCategoriesViewTV.getBackground()).setColor(color);
             BounceView.addAnimTo(holder.mCategoriesViewTV);
 

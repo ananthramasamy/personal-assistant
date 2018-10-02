@@ -140,6 +140,11 @@ public class InComeDetailsFragment extends Fragment implements View.OnClickListe
         if (!Configuration.isEmptyValidation(MyApplication.getMonthName())) {
             mMonthNameTV.setText(MyApplication.getMonthName());
         }
+        TextView mActualHintNameTV = rootView.findViewById(R.id.actual_name_tv);
+        TextView mGoalHintNameTV = rootView.findViewById(R.id.goal_name_tv);
+        mActualHintNameTV.setText(R.string.str_actual_income);
+        mGoalHintNameTV.setText(R.string.str_goals_income);
+
         mGoalIncomeValueTV = rootView.findViewById(R.id.goals_value_tv);
         mActualIncomeValueTV = rootView.findViewById(R.id.actual_value_tv);
         if (!Configuration.isEmptyValidation(mActualIncomeFormatted)) {
@@ -398,6 +403,11 @@ public class InComeDetailsFragment extends Fragment implements View.OnClickListe
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                new Handler().postDelayed(new Runnable() {
+                    public void run() {
+                        onPrePareAllIncomeData();
+                    }
+                }, 1500);
                 revealShow(dialogView, false, dialog);
             }
         });
@@ -458,13 +468,8 @@ public class InComeDetailsFragment extends Fragment implements View.OnClickListe
         try {
             final String mMessage = response.getString("message");
             Configuration.onAnimatedLoadingDismiss();
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    onUserConfirmationWarningAlert(mContext, mMessage);
+            onUserConfirmationWarningAlert(mContext, mMessage);
 
-                }
-            }, 1000);
         } catch (JSONException e) {
             e.printStackTrace();
             Configuration.onAnimatedLoadingDismiss();
@@ -496,11 +501,11 @@ public class InComeDetailsFragment extends Fragment implements View.OnClickListe
         int h = view.getHeight();
         int endRadius = (int) Math.hypot(w, h);
         int cx = (int) (mAddIncomeFAB.getX() + (mAddIncomeFAB.getWidth() / 2));
-        int cy = (int) (mAddIncomeFAB.getY()) + mAddIncomeFAB.getHeight() + 56;
+        int cy = (int) (mAddIncomeFAB.getY()) + mAddIncomeFAB.getHeight() + 54;
         if (b) {
             Animator revealAnimator = ViewAnimationUtils.createCircularReveal(view, cx, cy, 0, endRadius);
             view.setVisibility(View.VISIBLE);
-            revealAnimator.setDuration(700);
+            revealAnimator.setDuration(800);
             revealAnimator.start();
 
         } else {
@@ -514,7 +519,7 @@ public class InComeDetailsFragment extends Fragment implements View.OnClickListe
 
                 }
             });
-            anim.setDuration(700);
+            anim.setDuration(800);
             anim.start();
         }
 
@@ -554,8 +559,14 @@ public class InComeDetailsFragment extends Fragment implements View.OnClickListe
                     mTransactionAmountET.setText("");
                     mTransactionDescET.setText("");
                     WarningAlertDialog.dismiss();
+
+                    new Handler().postDelayed(new Runnable() {
+                        public void run() {
+                            onPrePareAllIncomeData();
+                        }
+                    }, 1500);
                     revealShow(dialogView, false, dialog);
-                    onPrePareAllIncomeData();
+
                 }
             });
             WarningAlertDialog.show();

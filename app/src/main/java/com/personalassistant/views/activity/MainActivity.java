@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
@@ -70,11 +69,12 @@ public class MainActivity extends AppCompatActivity implements DiscreteScrollVie
     BottomNavigationView bottomNavigationView;
     private String mGoalsOverallIncome, mGoalsOverallExpense, mGoalsOverallIncomeFormatted, mGoalsOverallExpenseFormatted;
     private String mActualOverallIncome, mActualOverallExpense, mActualOverallIncomeFormatted, mActualOverallExpenseFormatted;
-    private TextView mNoRecordFoundTV,mOverallGoalsIncomeTV, mOverallGoalsExpenseTV, mOverallActualIncomeTV, mOverActualExpenseTV, mGraphHeaderTV, mGraphEmptyContentTV;
+    private TextView mOverallGoalsIncomeTV, mOverallGoalsExpenseTV, mOverallActualIncomeTV, mOverActualExpenseTV, mGraphHeaderTV, mGraphEmptyContentTV;
     private String mGoalIncome, mGoalExpense;
     private EditText mGoalIncomeET, mGoalExpenseET;
     private TextInputLayout mGoalIncomeWrapper, mGoalExpenseWrapper;
-    private String mGraphDrawEnabled;
+    private String mGraphDrawEnabled, mTransactionStatus ;
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -111,19 +111,19 @@ public class MainActivity extends AppCompatActivity implements DiscreteScrollVie
         window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
         setContentView(R.layout.activity_main);
         mContext = MainActivity.this;
+        mTransactionStatus = getString(R.string.str_income);
         initViews();
         onPrePareDashboard();
     }
 
 
     private void initViews() {
-
         mYearTV = findViewById(R.id.year_tv);
         BounceView.addAnimTo(mYearTV);
         MyApplication.setYear("");
         MyApplication.setYear(String.valueOf(mYearTV.getText().toString()));
         DiscreteScrollView mMonthScrollView = findViewById(R.id.month_picker);
-        ImageView mLogoutIV=findViewById(R.id.ic_logout_iv);
+        ImageView mLogoutIV = findViewById(R.id.ic_logout_iv);
         mLogoutIV.setOnClickListener(this);
         BounceView.addAnimTo(mLogoutIV);
         mOverallActualIncomeTV = findViewById(R.id.over_all_actual_income_tv);
@@ -160,7 +160,7 @@ public class MainActivity extends AppCompatActivity implements DiscreteScrollVie
                 .build());
         bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         BottomNavigationViewHelper.removeShiftMode(bottomNavigationView);
-        mChart = findViewById(R.id.chart1);
+        mChart = findViewById(R.id.chart_view);
         mGraphHeaderTV = findViewById(R.id.graph_header_tv);
         mGraphEmptyContentTV = findViewById(R.id.no_data_available_tv);
         mGraphEmptyContentTV.setVisibility(View.GONE);
@@ -171,8 +171,10 @@ public class MainActivity extends AppCompatActivity implements DiscreteScrollVie
             @Override
             public void onCheckedChanged(SwitchButton view, boolean isChecked) {
                 if (isChecked) {
+                    mTransactionStatus = getString(R.string.str_expense);
                     mGraphDrawEnabled = getString(R.string.str_expense);
                 } else {
+                    mTransactionStatus = getString(R.string.str_income);
                     mGraphDrawEnabled = getString(R.string.str_income);
                 }
                 mGraphHeaderTV.setText(mGraphDrawEnabled);
@@ -225,7 +227,6 @@ public class MainActivity extends AppCompatActivity implements DiscreteScrollVie
                         onPrePareDashboard();
                     }
                 }, 2018, 0);
-
                 builder.showYearOnly()
                         .setYearRange(1990, 2030)
                         .build()
@@ -241,7 +242,7 @@ public class MainActivity extends AppCompatActivity implements DiscreteScrollVie
     }
 
     private void onUpdateGoalRequest(String mGoalIncome, String mGoalExpense) {
-        if (Configuration.isConnected(MainActivity.this)){
+        if (Configuration.isConnected(MainActivity.this)) {
             Configuration.onAnimatedLoadingShow(mContext, getString(R.string.str_loading));
             JSONObject jsonObject = null;
             try {
@@ -264,8 +265,8 @@ public class MainActivity extends AppCompatActivity implements DiscreteScrollVie
             DeleteTransactionRequest.setRetryPolicy(MyApplication.getDefaultRetryPolice());
             DeleteTransactionRequest.setShouldCache(false);
             MyApplication.getInstance().addToRequestQueue(DeleteTransactionRequest, Constants.EXPENSE_GOAL);
-        }else {
-            Configuration.onWarningAlertDialog(mContext,"Alert",getString(R.string.str_no_internet_connection));
+        } else {
+            Configuration.onWarningAlertDialog(mContext, "Alert", getString(R.string.str_no_internet_connection));
         }
 
     }
@@ -290,7 +291,7 @@ public class MainActivity extends AppCompatActivity implements DiscreteScrollVie
     }
 
     private void onPrePareDashboard() {
-        if (Configuration.isConnected(MainActivity.this)){
+        if (Configuration.isConnected(MainActivity.this)) {
             Configuration.onAnimatedLoadingShow(mContext, getString(R.string.str_fetching));
             JSONObject jsonObject = null;
             try {
@@ -313,8 +314,8 @@ public class MainActivity extends AppCompatActivity implements DiscreteScrollVie
             AddIncomeRequest.setRetryPolicy(MyApplication.getDefaultRetryPolice());
             AddIncomeRequest.setShouldCache(false);
             MyApplication.getInstance().addToRequestQueue(AddIncomeRequest, Constants.GET_INCOME_REQUESTS_TAG);
-        }else {
-            Configuration.onWarningAlertDialog(mContext,"Alert",getString(R.string.str_no_internet_connection));
+        } else {
+            Configuration.onWarningAlertDialog(mContext, "Alert", getString(R.string.str_no_internet_connection));
         }
 
 
@@ -347,7 +348,7 @@ public class MainActivity extends AppCompatActivity implements DiscreteScrollVie
             mActualOverallIncomeFormatted = mActualJsonObject.getString(Constants.DASHBOARD_TRANSACTION_INCOME_FORMATTED_TAG);
             mActualOverallExpenseFormatted = mActualJsonObject.getString(Constants.DASHBOARD_TRANSACTION_EXPENSE_FORMATTED_TAG);
             JSONArray responseJSONArray;
-            if (TextUtils.equals(mGraphDrawEnabled, getString(R.string.str_expense))) {
+            if (TextUtils.equals(mTransactionStatus, getString(R.string.str_expense))) {
                 responseJSONArray = response.getJSONArray(Constants.DASHBOARD_TRANSACTION_EXPENSE_DETAILS_TAG);
             } else {
                 responseJSONArray = response.getJSONArray(Constants.DASHBOARD_TRANSACTION_INCOME_DETAILS_TAG);
@@ -446,6 +447,7 @@ public class MainActivity extends AppCompatActivity implements DiscreteScrollVie
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private void onUserConfirmationWarningAlert(final Context mContext) {
         final Dialog WarningAlertDialog;
         try {
@@ -498,6 +500,7 @@ public class MainActivity extends AppCompatActivity implements DiscreteScrollVie
         mChart.setRotationAngle(0);
         mChart.setRotationEnabled(true);
         mChart.setHighlightPerTapEnabled(true);
+        mChart.getLegend().setWordWrapEnabled(true);
         Legend l = mChart.getLegend();
         l.setVerticalAlignment(Legend.LegendVerticalAlignment.BOTTOM);
         l.setHorizontalAlignment(Legend.LegendHorizontalAlignment.LEFT);
@@ -505,9 +508,10 @@ public class MainActivity extends AppCompatActivity implements DiscreteScrollVie
         l.setDrawInside(false);
         l.setXEntrySpace(7f);
         l.setYEntrySpace(1f);
-        l.setYOffset(0f);
-        mChart.setEntryLabelColor(Color.TRANSPARENT);
-        mChart.setEntryLabelTextSize(12f);
+        //l.setYOffset(0f);
+        mChart.setDrawEntryLabels(false);
+        //mChart.setEntryLabelColor(Color.TRANSPARENT);
+       // mChart.setEntryLabelTextSize(12f);
         ArrayList<PieEntry> entries = new ArrayList<>();
         for (int i = 0; i < ExpenseDetailsObjectArrayList.size(); i++) {
             entries.add(new PieEntry(Float.parseFloat(ExpenseDetailsObjectArrayList.get(i).getmTransactionTypeTotal()), ExpenseDetailsObjectArrayList.get(i).getmTransactionType()));
@@ -516,10 +520,16 @@ public class MainActivity extends AppCompatActivity implements DiscreteScrollVie
         dataSet.setDrawIcons(false);
         dataSet.setYValuePosition(PieDataSet.ValuePosition.OUTSIDE_SLICE);
         dataSet.setSliceSpace(2f);
-        dataSet.setIconsOffset(new MPPointF(0, 40));
+        dataSet.setIconsOffset(new MPPointF(0, 60));
         dataSet.setSelectionShift(5f);
-        for (int c : Constants.MATERIAL_COLORS)
-            colors.add(c);
+        if (TextUtils.equals(mTransactionStatus, getString(R.string.str_income))) {
+            for (int c : Constants.INCOME_COLORS)
+                colors.add(c);
+        } else {
+            for (int c : Constants.EXPENSE_CATEGORIES_COLORS)
+                colors.add(c);
+        }
+
         dataSet.setColors(colors);
         PieData data = new PieData(dataSet);
         data.setValueFormatter(new PercentFormatter());

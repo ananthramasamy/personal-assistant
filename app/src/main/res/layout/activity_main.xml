@@ -274,9 +274,9 @@
                 android:minHeight="200dp">
 
                 <com.github.mikephil.charting.charts.PieChart
-                    android:id="@+id/chart1"
+                    android:id="@+id/chart_view"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_gravity="start"
                     android:layout_marginBottom="@dimen/activity_vertical_margin"
                     android:minHeight="200dp" />
@@ -307,6 +307,7 @@
         android:layout_alignParentBottom="true"
         android:layout_gravity="bottom"
         android:layout_marginEnd="0dp"
+        app:labelVisibilityMode="labeled"
         android:layout_marginStart="0dp"
         android:background="@color/md_white_1000"
         app:itemBackground="?attr/selectableItemBackground"

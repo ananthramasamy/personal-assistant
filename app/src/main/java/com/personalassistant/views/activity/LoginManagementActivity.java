@@ -13,7 +13,11 @@ import android.support.transition.TransitionManager;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.SpannableString;
+import android.text.Spanned;
 import android.text.TextUtils;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
@@ -30,6 +34,7 @@ import com.personalassistant.MyApplication;
 import com.personalassistant.R;
 import com.personalassistant.endpoint.EndPoints;
 import com.personalassistant.endpoint.JsonRequest;
+import com.personalassistant.listeners.OnTouchPasswordListener;
 import com.personalassistant.utils.BounceView;
 import com.personalassistant.utils.Configuration;
 import com.personalassistant.utils.Constants;
@@ -68,9 +73,6 @@ public class LoginManagementActivity extends AppCompatActivity implements View.O
 
     private void initViews() {
         mToolbar = findViewById(R.id.toolbar);
-       // setSupportActionBar(mToolbar);
-      //  Objects.requireNonNull(getSupportActionBar()).setHomeAsUpIndicator(R.drawable.ic_arrow_back);
-      //  getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         mToolbar.setTitle("Login");
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,6 +105,7 @@ public class LoginManagementActivity extends AppCompatActivity implements View.O
         }
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     private void onEnableLoginView(LinearLayout mLoginLayout) {
         try {
             onEnableBackAction(mUserLoginLayout.getId());
@@ -115,6 +118,7 @@ public class LoginManagementActivity extends AppCompatActivity implements View.O
             mLoginPasswordWrapper = mRootView.findViewById(R.id.login_password_wrapper);
             mLoginEmailET = mRootView.findViewById(R.id.login_email_et);
             mLoginPasswordET = mRootView.findViewById(R.id.login_password_et);
+            mLoginPasswordET.setOnTouchListener(new OnTouchPasswordListener(mLoginPasswordET));
             LoginActionBTN = mRootView.findViewById(R.id.login_action_iv_btn);
             mRegisterRedirectTV = mRootView.findViewById(R.id.register_redirect_tv);
             mForgotPasswordRedirectTV = mRootView.findViewById(R.id.forgot_password_redirect_tv);
@@ -123,8 +127,9 @@ public class LoginManagementActivity extends AppCompatActivity implements View.O
             mForgotPasswordRedirectTV.setOnClickListener(this);
             Configuration.ResetTextInputLayout(mContext, mLoginEmailWrapper, mLoginEmailET);
             Configuration.ResetTextInputLayout(mContext, mLoginPasswordWrapper, mLoginPasswordET);
+            BounceView.addAnimTo(LoginActionBTN);
             mLoginLayout.addView(mRootView);
-            BounceView.addAnimTo(mRootView);
+            // BounceView.addAnimTo(mRootView);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -152,6 +157,7 @@ public class LoginManagementActivity extends AppCompatActivity implements View.O
     }
 
 
+    @SuppressLint("ClickableViewAccessibility")
     private void onEnableRegisterView(LinearLayout RegisterLayout) {
         try {
             onEnableBackAction(mRegisterLayout.getId());
@@ -166,7 +172,9 @@ public class LoginManagementActivity extends AppCompatActivity implements View.O
             mMobileNoWrapper = rootView.findViewById(R.id.register_mobile_no_wrapper);
             mEmailET = rootView.findViewById(R.id.register_email_et);
             mPasswordET = rootView.findViewById(R.id.register_password_et);
+            mPasswordET.setOnTouchListener(new OnTouchPasswordListener(mPasswordET));
             mConfirmPasswordET = rootView.findViewById(R.id.register_confirm_password_et);
+            mConfirmPasswordET.setOnTouchListener(new OnTouchPasswordListener(mConfirmPasswordET));
             mMobileNoET = rootView.findViewById(R.id.register_mobile_no_et);
             ImageButton mRegisterActionBTN = rootView.findViewById(R.id.register_action_iv_btn);
             mLoginRedirectTV = rootView.findViewById(R.id.login_page_redirect_action_tv);
@@ -177,7 +185,7 @@ public class LoginManagementActivity extends AppCompatActivity implements View.O
             Configuration.ResetTextInputLayout(mContext, mConfirmPasswordWrapper, mConfirmPasswordET);
             Configuration.ResetTextInputLayout(mContext, mMobileNoWrapper, mMobileNoET);
             RegisterLayout.addView(rootView);
-            BounceView.addAnimTo(RegisterLayout);
+            BounceView.addAnimTo(mRegisterActionBTN);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -354,6 +362,7 @@ public class LoginManagementActivity extends AppCompatActivity implements View.O
         Configuration.onAnimatedLoadingDismiss();
     }
 
+    @SuppressLint("SetTextI18n")
     private void onUserConfirmationWarningAlert(final Context mContext) {
         final Dialog WarningAlertDialog;
         try {
@@ -391,5 +400,6 @@ public class LoginManagementActivity extends AppCompatActivity implements View.O
         }
     }
     //Request
+
 
 }

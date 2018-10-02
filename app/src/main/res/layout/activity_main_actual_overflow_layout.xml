@@ -9,6 +9,8 @@
     android:padding="4dp"
     tools:targetApi="lollipop">
 
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -32,7 +34,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/str_income"
+                android:text="@string/str_goals_income"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
                 android:textSize="12sp" />
 
@@ -61,7 +63,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:padding="2dp"
-                android:text="@string/str_expense"
+                android:text="@string/str_goals_expense"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
                 android:textSize="12sp" />
 

@@ -404,7 +404,14 @@ public class ExpenseDetailsFragment extends Fragment implements View.OnClickList
             @Override
             public void onClick(View v) {
 
+                new Handler().postDelayed(new Runnable() {
+                    public void run() {
+                        onPrePareAllExpenseData();
+                    }
+                },  1500);
                 revealShow(dialogView, false, dialog);
+
+
             }
         });
 
@@ -478,6 +485,7 @@ public class ExpenseDetailsFragment extends Fragment implements View.OnClickList
                     onUserConfirmationWarningAlert(mContext, mMessage);
                 }
             }, 600);
+
         } catch (JSONException e) {
             e.printStackTrace();
             Configuration.onAnimatedLoadingDismiss();
@@ -510,7 +518,7 @@ public class ExpenseDetailsFragment extends Fragment implements View.OnClickList
         int h = view.getHeight();
         int endRadius = (int) Math.hypot(w, h);
         int cx = (int) (mAddExpenseFAB.getX() + (mAddExpenseFAB.getWidth() / 2));
-        int cy = (int) (mAddExpenseFAB.getY()) + mAddExpenseFAB.getHeight() + 56;
+        int cy = (int) (mAddExpenseFAB.getY()) + mAddExpenseFAB.getHeight() + 55;
         if (b) {
             Animator revealAnimator = ViewAnimationUtils.createCircularReveal(view, cx, cy, 0, endRadius);
             view.setVisibility(View.VISIBLE);
@@ -527,7 +535,7 @@ public class ExpenseDetailsFragment extends Fragment implements View.OnClickList
                     view.setVisibility(View.INVISIBLE);
                 }
             });
-            anim.setDuration(700);
+            anim.setDuration(800);
             anim.start();
         }
     }
@@ -566,8 +574,12 @@ public class ExpenseDetailsFragment extends Fragment implements View.OnClickList
                     mExpenseTransactionAmountET.setText("");
                     mExpenseTransactionDescET.setText("");
                     WarningAlertDialog.dismiss();
+                    new Handler().postDelayed(new Runnable() {
+                        public void run() {
+                            onPrePareAllExpenseData();
+                        }
+                    },  1500);
                     revealShow(dialogView, false, dialog);
-                    onPrePareAllExpenseData();
                 }
             });
             WarningAlertDialog.show();

@@ -43,8 +43,7 @@ public class InComeExpenseSummaryFragment extends Fragment {
     private OverallExpenseIncomeAdapter mOverallExpenseIncomeAdapter;
     private ArrayList<ExpenseDetailsObject> ExpenseDetailsObjectArrayList = new ArrayList<>();
     private TextView mEmptyViewTV, mGraphHeaderTV;
-    private String mTransactionStatus;
-    private String mActualOverallIncomeFormatted, mActualOverallExpenseFormatted, mGoalsOverallIncomeFormatted, mGoalsOverallExpenseFormatted;
+    private String mActualOverallIncomeFormatted, mActualOverallExpenseFormatted, mGoalsOverallIncomeFormatted, mGoalsOverallExpenseFormatted,mTransactionStatus;
     private TextView mOverallGoalsIncomeTV, mOverallGoalsExpenseTV, mOverallActualIncomeTV, mOverActualExpenseTV;
 
     @Nullable
@@ -60,6 +59,7 @@ public class InComeExpenseSummaryFragment extends Fragment {
         });
 
         mContext = getActivity();
+         mTransactionStatus=getString(R.string.str_income);
         initViews(rootView);
         onPrepareOverAllResponse();
         return rootView;
@@ -102,7 +102,7 @@ public class InComeExpenseSummaryFragment extends Fragment {
         mIncomeExpenseRecyclerView.setLayoutManager(layoutManager);
         mIncomeExpenseRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mIncomeExpenseRecyclerView.setHasFixedSize(true);
-        mOverallExpenseIncomeAdapter = new OverallExpenseIncomeAdapter(mContext, ExpenseDetailsObjectArrayList);
+        mOverallExpenseIncomeAdapter = new OverallExpenseIncomeAdapter(mTransactionStatus,mContext, ExpenseDetailsObjectArrayList);
         mIncomeExpenseRecyclerView.setAdapter(mOverallExpenseIncomeAdapter);
         Configuration.runLayoutAnimation(mIncomeExpenseRecyclerView);
 
@@ -164,7 +164,7 @@ public class InComeExpenseSummaryFragment extends Fragment {
                 }
                 mIncomeExpenseRecyclerView.setVisibility(View.VISIBLE);
                 mEmptyViewTV.setVisibility(View.GONE);
-                mOverallExpenseIncomeAdapter.onNotifyDataSetChanged(ExpenseDetailsObjectArrayList);
+                mOverallExpenseIncomeAdapter.onNotifyDataSetChanged(mTransactionStatus,ExpenseDetailsObjectArrayList);
                 Configuration.runLayoutAnimation(mIncomeExpenseRecyclerView);
             } else {
                 mIncomeExpenseRecyclerView.setVisibility(View.GONE);
