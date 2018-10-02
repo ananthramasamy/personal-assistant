@@ -1,6 +1,6 @@
 # Personal-Assistant Focus on Budget
 
-####Budget is a **Personal Assistant** budget management Android application.
+## **Personal Assistant** budget management Android application.
 ## **Captured images Walkthrough**:
 <img src="ScreenShot/01.jpg" width="269" height="480"/> <img src="ScreenShot/02.jpg" width="269" height="480"/> <img src="ScreenShot/03.jpg" width="269" height="480"/>
 
@@ -19,3 +19,14 @@
  <img src="ScreenShot/020.jpg" width="269" height="480"/> <img src="ScreenShot/021.jpg" width="269" height="480"/> <img src="ScreenShot/022.jpg" width="269" height="480"/>
 ## **Captured images Dashboard Management **:
  <img src="ScreenShot/023.jpg" width="269" height="480"/> <img src="ScreenShot/024.jpg" width="269" height="480"/>
+
+## Technical details
+ - `Personal-Assistant is a simple Android app build with Android Studio that supports from Android 5.0.`
+ - `The app adopt material design as much as possible using appcompat and some imagination/magic.`
+
+ - The project is made possible by some external libraries made by awesome guys that I want to thanks here:
+ - MPAndroidChart: a library to display a customizable Chart [https://github.com/PhilJay/MPAndroidChart])
+ 
+ ## Contact
+
+You can contact me regarding Personal-Assistant application using this email: [ananthramasamy@hotmail.com](mailto:ananthramasamy@hotmail.com)
