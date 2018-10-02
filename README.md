@@ -22,13 +22,7 @@
 <img src="ScreenShot/010.jpg" width="269" height="480"/> <img src="ScreenShot/011.jpg" width="269" height="480"/> <img src="ScreenShot/012.jpg" width="269" height="480"/>
 
 #### Manage Income
-<img src="ScreenShot/013.jpg" width="269" height="480"/>  <img src="ScreenShot/014.jpg" width="269" height="480"/> <img src="ScreenShot/015.jpg" width="269" height="480"/>
-
-#### Manage Expense
-  <img src="ScreenShot/017.jpg" width="269" height="480"/> <img src="ScreenShot/018.jpg" width="269" height="480"/>   
-
-#### Add Expense
- <img src="ScreenShot/020.jpg" width="269" height="480"/>
+<img src="ScreenShot/013.jpg" width="269" height="480"/>  <img src="ScreenShot/014.jpg" width="269" height="480"/> <img src="ScreenShot/015.jpg" width="269" height="480"/>  <img src="ScreenShot/017.jpg" width="269" height="480"/> <img src="ScreenShot/018.jpg" width="269" height="480"/>   
  
 #### Reports
  <img src="ScreenShot/022.jpg" width="269" height="480"/> <img src="ScreenShot/023.jpg" width="269" height="480"/> <img src="ScreenShot/024.jpg" width="269" height="480"/> 
