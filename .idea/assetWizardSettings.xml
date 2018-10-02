@@ -90,8 +90,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_login_logo" />
-                            <entry key="sourceFile" value="G:\NewSprit\Design\Login\ic_login_logo.svg" />
+                            <entry key="outputName" value="ic_register_logo" />
+                            <entry key="sourceFile" value="G:\NewSprit\Design\Login\ic_register_logo.svg" />
                           </map>
                         </option>
                       </PersistentState>
