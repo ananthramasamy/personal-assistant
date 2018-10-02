@@ -12,9 +12,9 @@
 - ## **Captured images Goals Management**:
 <img src="ScreenShot/010.jpg" width="269" height="480"/> <img src="ScreenShot/011.jpg" width="269" height="480"/> <img src="ScreenShot/012.jpg" width="269" height="480"/>
 ## **Captured images Add Income**:
-<img src="ScreenShot/013.jpg" width="269" height="480"/> <img src="ScreenShot/014.jpg" width="269" height="480"/> <img src="ScreenShot/015.jpg" width="269" height="480"/>
+<img src="ScreenShot/013.jpg" width="269" height="480"/>  <img src="ScreenShot/014.jpg" width="269" height="480"/> <img src="ScreenShot/015.jpg" width="269" height="480"/>
 ## **Captured images Add Income Dashboard**:
-<img src="ScreenShot/017.jpg" width="269" height="480"/> <img src="ScreenShot/018.jpg" width="269" height="480"/><img src="ScreenShot/019.jpg" width="269" height="480"/>
+<img src="ScreenShot/017.jpg" width="269" height="480"/> <img src="ScreenShot/018.jpg" width="269" height="480"/>  <img src="ScreenShot/019.jpg" width="269" height="480"/>
 ## **Captured images Add Expense **:
  <img src="ScreenShot/020.jpg" width="269" height="480"/> <img src="ScreenShot/021.jpg" width="269" height="480"/> <img src="ScreenShot/022.jpg" width="269" height="480"/>
 ## **Captured images Dashboard Management **:
