@@ -144,7 +144,7 @@
                             android:layout_height="46dp"
                             android:fontFamily="sans-serif-condensed"
                             android:hint="@string/hint_description_et"
-                            android:inputType="text"
+                            android:inputType="textCapWords|textCapSentences"
                             android:lineSpacingExtra="5dp"
                             android:singleLine="true"
                             android:textColor="@color/md_black_1000"

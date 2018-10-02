@@ -545,7 +545,7 @@ public class InComeDetailsFragment extends Fragment implements View.OnClickListe
             Objects.requireNonNull(WarningAlertDialog.getWindow()).setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
             WarningAlertDialog.setCancelable(false);
             WarningAlertDialog.setCanceledOnTouchOutside(false);
-            WarningAlertMsgTV.setText(mMessage + " Do You wish to add another income?");
+            WarningAlertMsgTV.setText(mMessage + ". Do You wish to add another income?");
             WarningAlertTittleTV.setText("Alert");
             CloseBTN.setOnClickListener(new View.OnClickListener() {
                 @Override
