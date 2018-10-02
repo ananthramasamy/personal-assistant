@@ -292,11 +292,9 @@ public class InComeDetailsFragment extends Fragment implements View.OnClickListe
                     getIncomeDetailsResultsList.add(new GetIncomeDetailsResult(transactionId, transactionType, transactionDescription,
                             transactionAmount, transactionAmountFormatted));
                 }
-
-
                 mIncomeAdapter.onNotifyDataSetChanged(getIncomeDetailsResultsList);
-                onGetGoalIncomeData();
             }
+            onGetGoalIncomeData();
             if (getIncomeDetailsResultsList.size() > 0) {
                 mIncomeAdapter.onNotifyDataSetChanged(getIncomeDetailsResultsList);
                 Configuration.runLayoutAnimation(mAllIncomeRecyclerView);

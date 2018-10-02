@@ -211,7 +211,6 @@ public class ExpenseDetailsFragment extends Fragment implements View.OnClickList
                 mExpenseAdapter.onNotifyDataSetChanged(getExpenseDetailsResultsList);
                 mExpenseAdapter.notifyItemChanged(onSelectedItemPosition);
                 mAllExpenseRecyclerView.scrollToPosition(onSelectedItemPosition);
-
                 mAllExpenseRecyclerView.setVisibility(View.VISIBLE);
                 mNoRecordFoundTV.setVisibility(View.GONE);
                 Toasty.success(mContext, mMessage, 100, true).show();
@@ -276,8 +275,8 @@ public class ExpenseDetailsFragment extends Fragment implements View.OnClickList
                 }
                 mAllExpenseRecyclerView.setVisibility(View.VISIBLE);
                 mNoRecordFoundTV.setVisibility(View.GONE);
-                onGetGoalIncomeData();
             }
+            onGetGoalIncomeData();
             if (getExpenseDetailsResultsList.size() > 0) {
                 mExpenseAdapter.onNotifyDataSetChanged(getExpenseDetailsResultsList);
                 Configuration.runLayoutAnimation(mAllExpenseRecyclerView);
