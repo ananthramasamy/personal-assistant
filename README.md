@@ -49,6 +49,7 @@
  <img src="ScreenShot/022.jpg" width="269" height="480"/> <img src="ScreenShot/023.jpg" width="269" height="480"/> <img src="ScreenShot/024.jpg" width="269" height="480"/> 
  
  
+ ##
 
 #### Technical details
  - `Personal-Assistant is a simple Android app build with Android Studio that supports from Android 5.0.`
@@ -57,6 +58,12 @@
  - The project is made possible by some external libraries made by awesome guys that I want to thanks here:
  - MPAndroidChart: a library to display a customizable Chart [https://github.com/PhilJay/MPAndroidChart])
  
+ 
+ ##
+ 
  #### Contact
 
 You can contact me regarding Personal-Assistant application using this email: [ananthramasamy@hotmail.com](mailto:ananthramasamy@hotmail.com)
+
+
+##
